@@ -14,15 +14,16 @@ services:
   #     - postgres
 
   nest:
+    build: ./nestDocker
     container_name: nest
     image: node:latest
     # depends_on:
       # - postgres
+    environment:
+      NEST_PORT: ${NEST_PORT}
     ports:
-      - "${nest_PORT:-5500}:${nest_PORT:-5500}"
-      - "5555:5555"
+      - "${NEST_PORT:-5500}:${NEST_PORT:-5500}"
     restart: always
-    command: /bin/sh -c "npm i bun && tail -f /dev/null"
     volumes:
       - "./nest:/app"
     working_dir: /app

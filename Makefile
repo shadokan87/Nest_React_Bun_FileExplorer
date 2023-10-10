@@ -58,9 +58,9 @@ enter-db:
 # - vous permez d'afficher les logs d'un container.
 # - utile les tests preliminaire et debug.
 
-.PHONY: log-back
-log-back:
-	@docker logs back -f
+.PHONY: log-nest
+log-nest:
+	@docker logs nest -f
 
 .PHONY: log-file_service
 log-file_service:
