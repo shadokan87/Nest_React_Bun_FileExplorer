@@ -1,6 +1,5 @@
 #! /bin/bash
-init=("upgrade" "install" "start")
-for arg in "${init[@]}"
-do
-    bun $cmd
-done
+# Bun
+bun upgrade
+bun install
+bun run --hot src/main.ts
